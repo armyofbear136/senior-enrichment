@@ -12,14 +12,15 @@ class Navbar extends Component {
         return (
             // <Router history={history} >
 
-            <nav>
-                <div>
-                    {/* <button>Home</button> */}
-                    <NavLink to="/">Home</NavLink>
+            <nav className="navigator">
+                <div className= "home-button">
+                    <NavLink to="/"> Home </NavLink>
                 </div>
-                <div>
-                    {/* <button>Students</button> */}
-                    <NavLink to="/students">Students</NavLink>
+                <div className= "campuses-button">
+                    <NavLink to="/campuses"> Campuses </NavLink>
+                </div>
+                <div className= "students-button">
+                    <NavLink to="/students"> Students </NavLink>
                 </div>
 
             </nav>

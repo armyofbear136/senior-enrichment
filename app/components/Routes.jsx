@@ -10,8 +10,8 @@ import Root from './Root';
 import Home from './Home';
 import Navbar from './Navbar';
 import Students from './Students';
-import AddPony from './AddPony';
 import Campus from './Campus';
+import Campuses from './Campuses';
 import StudentDetail from './Student/StudentDetail';
 
 import { fetchStudents } from '../reducers/students';
@@ -32,8 +32,8 @@ class Routes extends Component {
                         <Route exact path="/" component={Home} />
                         <Route path="/students" component={Students} />
                         <Route path="/student/:id" component={StudentDetail} />
+                        <Route path="/campuses" component={Campuses} />
                         <Route path="/campus/:id" component={Campus} />
-                        <Route path="/addpony" component={AddPony} />
                         <Redirect to="/" />
                     </Switch>
                 </Root>

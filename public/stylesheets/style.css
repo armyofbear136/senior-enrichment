@@ -1,0 +1,39 @@
+.home-page {
+    /* background-color: blue; */
+}
+
+.campus {
+
+}
+/* .page-frame {
+    background-image: 'https://i.imgur.com/pMZMxF2.png';
+    
+    
+} */
+
+.full-page {
+        background-image:url('https://i.imgur.com/pMZMxF2.png')
+        /*background-attachment: fixed,
+        background-repeat: no-repeat,
+        background-size: cover, */
+}
+
+.campus-img {
+    max-width: 100px;
+}
+
+.student-img {
+    max-width: 100px;
+}
+
+.campus-elements {
+    display: flex;
+}
+
+.student-elements {
+    display: flex;
+}
+
+.navigator {
+    display: flex;
+}

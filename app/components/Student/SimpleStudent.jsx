@@ -6,7 +6,7 @@ import { removeStudent } from '../../reducers/students';
 /* -----------------    COMPONENT     ------------------ */
 
 
-class StudentItem extends React.Component {
+class SimpleStudent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,7 +16,6 @@ class StudentItem extends React.Component {
 
     render() {
         const { student } = this.props;
-        if (!student.campus) return <div/>
         return (
             <div className="list-group-item min-content student-item">
                 <div className="media">
@@ -28,18 +27,9 @@ class StudentItem extends React.Component {
                         activeClassName="active"
                         to={`/student/${student.id}`}>
                         <h4 className="media-heading tucked">
-                            <span placeholder="0">{student.id}</span>
-                        </h4>
-                        <h4 className="media-heading tucked">
                             <span placeholder="Jean Doe">{student.name}</span>
                         </h4>
-                        <img className="student-img" src={student.imageUrl}/>
-                    </NavLink>
-                    <NavLink
-                        to={`/campus/${student.campus_id}`}>
-                        <h5 className="tucked">
-                            <span placeholder='Pony School'>{student.campus.name}</span>
-                        </h5>
+
                     </NavLink>
                     <div className="media-right media-middle">
                         <button
@@ -67,4 +57,4 @@ const mapState = null;
 
 const mapDispatch = { removeStudent }
 
-export default connect(mapState, mapDispatch)(StudentItem);
+export default connect(mapState, mapDispatch)(SimpleStudent);

@@ -32,7 +32,18 @@ router.get('/', function (req, res, next) {
 router.post('/', function (req, res, next) {
   Student.create(req.body)
     .then(function (student) {
-      res.status(201).json(student);
+      console.log("finding one student", student.dataValues.id);
+      return Student.findOne(
+        {
+          where: {id: student.dataValues.id},
+          include: [{
+            model: Campus
+          }]
+        })
+    })
+    .then(function (newStudent) {
+      console.log(newStudent);
+      res.status(201).json(newStudent);
     })
     .catch(next);
 });

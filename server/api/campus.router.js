@@ -4,7 +4,6 @@ const router = require('express').Router();
 
 const HttpError = require('../../utils/HttpError');
 const Campus = require('./campus.model');
-// const Campus = require('./campus.model');
 
 router.param('id', function (req, res, next, id) {
   Campus.findById(id)

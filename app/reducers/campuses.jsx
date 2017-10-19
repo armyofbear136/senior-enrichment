@@ -51,12 +51,12 @@ export const fetchCampuses = () => dispatch => {
 // optimistic
 export const removeCampus = id => dispatch => {
   dispatch(remove(id));
-  axios.delete(`/api/campuses/${id}`)
+  return axios.delete(`/api/campuses/${id}`)
        .catch(err => console.error(`Removing campus: ${id} unsuccesful`, err));
 };
 
 export const addCampus = campus => dispatch => {
-  axios.post('/api/campuses', campus)
+  return axios.post('/api/campuses', campus)
        .then(res => dispatch(create(res.data)))
        .catch(err => console.error(`Creating campus: ${campus} unsuccesful`, err));
 };

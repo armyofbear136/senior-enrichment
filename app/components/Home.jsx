@@ -1,30 +1,21 @@
 import React, { Component } from 'react';
-import CampusItem from './Campus/CampusItem';
-import { connect } from 'react-redux';
 
 
-class Home extends Component {
+export default class Home extends Component {
     constructor() {
         super()
     }
     render() {
         return (
             <div>
-                <h1>Campuses</h1>
-                <div>
-                    {
-                        this.props.campuses
-                            //.filter(this.filterUser)
-                            .map(campus => <CampusItem campus={campus} key={campus.id} />)
-                    }
-                </div>
+                <h1> This is your home now </h1>
             </div>
         )
     }
 
 }
 
-const mapState = ({ campuses }) => ({ campuses });
+// const mapState = ({ campuses }) => ({ campuses });
 
 
-export default connect(mapState)(Home);
+// export default connect(mapState)(Home);

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, NavLink, withRouter } from 'react-router-dom';
-import StudentItem from './Student/StudentItem';
+import SimpleStudent from './Student/SimpleStudent';
 import { removeCampus } from '../reducers/campuses';
+import { fetchStudents } from '../reducers/students';
 
 class Campus extends Component {
     constructor(props) {
@@ -16,24 +17,26 @@ class Campus extends Component {
     }
     render() {
         console.log();
-        this.ourCampus = this.props.campuses.filter(this.filterOneCampus)[0];
-        if (!this.ourCampus) return <div />  // the student id is invalid or data isn't loaded yet
+        this.state.ourCampus = this.props.campuses.filter(this.filterOneCampus)[0];
+        if (!this.state.ourCampus) return <div />  // the student id is invalid or data isn't loaded yet
 
         return (
             <div>
-                <h1>{`${this.ourCampus.name}`}</h1>
-                <div className="media-right media-middle">
+                <div className="campus-elements">
+                    <h1>{`${this.state.ourCampus.name}`}</h1>
+                    <div className="media-right media-middle">
                         <button
                             className="btn btn-default"
                             onClick={this.removeCampusCallback}>
                             <span className="glyphicon glyphicon-remove" />
                         </button>
                     </div>
-                <div>
+                </div>
+                <div className="student-elements">
                     {
                         this.props.students
                             .filter(this.filterByCampus)
-                            .map(student => <StudentItem student={student} key={student.id} />)
+                            .map(student => <SimpleStudent student={student} key={student.id} />)
                     }
                 </div>
             </div>
@@ -51,14 +54,17 @@ class Campus extends Component {
     }
 
     removeCampusCallback(event) {
-        const { removeCampus } = this.props;
+        const { removeCampus, fetchStudents } = this.props;
         event.stopPropagation();
-        removeCampus(this.ourCampus.id);
+        removeCampus(this.state.ourCampus.id)
+            .then(res =>
+                fetchStudents()
+            )
     }
 }
 
 const mapState = ({ students, campuses }) => ({ students, campuses });
 
-const mapDispatch = { removeCampus };
+const mapDispatch = { removeCampus, fetchStudents };
 
-export default connect(mapState)(withRouter(Campus));
+export default connect(mapState, mapDispatch)(withRouter(Campus));

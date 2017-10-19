@@ -27,6 +27,7 @@ export default class CampusItem extends React.Component {
                         <h4 className="media-heading tucked">
                             <span placeholder="Pony School">{campus.name}</span>
                         </h4>
+                        <img className='campus-img' src={campus.imageUrl}/>
                     </NavLink>
                     {/* <div className="media-right media-middle">
                         {this.props.onecampus.isAdmin ?

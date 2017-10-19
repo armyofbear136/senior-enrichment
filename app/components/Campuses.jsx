@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { Link, NavLink, withRouter } from 'react-router-dom';
+import CampusItem from './Campus/CampusItem';
+import AddCampus from './Campus/AddCampus';
 import { connect } from 'react-redux';
-import StudentItem from './Student/StudentItem';
-import AddPony from './Student/AddPony';
 
 
-class Students extends Component {
+class Campuses extends Component {
     constructor() {
         super()
         this.state = {
@@ -21,17 +20,15 @@ class Students extends Component {
                     onClick={this.toggleEditor}
                     >Toggle Editor</button>
                 </div>
+                <h1 className='campus'>Campuses</h1>
                 <div>
-                    <h1># Name Campus</h1>
-                </div>
-                <div className="student-elements">
                     {
-                        this.props.students
+                        this.props.campuses
                             //.filter(this.filterUser)
-                            .map(student => <StudentItem student={student} key={student.id} />)
+                            .map(campus => <CampusItem campus={campus} key={campus.id} />)
                     }
                 </div>
-                {this.state.editorActive ? <AddPony/> : null}
+                {this.state.editorActive ? <AddCampus/> : null}
             </div>
         )
     }
@@ -40,9 +37,10 @@ class Students extends Component {
         console.log(this.state);
         this.setState({editorActive: !this.state.editorActive})
     }
+
 }
 
-const mapState = ({ students }) => ({ students });
+const mapState = ({ campuses }) => ({ campuses });
 
 
-export default connect(mapState)(withRouter(Students));
+export default connect(mapState)(Campuses);

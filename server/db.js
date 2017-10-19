@@ -6,7 +6,7 @@ const Campus = require('./api/campus.model');
 const Student = require('./api/student.model');
 
 
-Student.belongsTo(Campus);
+Student.belongsTo(Campus, {onDelete: 'CASCADE'});
 Campus.hasMany(Student);
 
 //Student.belongsToMany(Campus, {through: 'StudentId'});
