@@ -3,6 +3,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const {resolve} = require('path')
+const main = require('./routes/main')
 
 const app = express()
 
@@ -16,7 +17,7 @@ module.exports = app
   .use(bodyParser.urlencoded({ extended: true }))
   .use(bodyParser.json())
   .use(express.static(resolve(__dirname, '..', 'public'))) // Serve static files from ../public
-  .use('/api', require('./api')) // Serve our api
+  .use('/api', require('./routes/api')) // Serve our api
   .get('/*', (_, res) => res.sendFile(resolve(__dirname, '..', 'public', 'index.html'))) // Send index.html for any other requests.
 
   // notice the use of `_` as the first parameter above. This is a pattern for parameters that must exist, but you don't use or reference (or need) in the function body that follows.
@@ -36,10 +37,13 @@ if (module === require.main) {
 
   const PORT = 1337
 
-  const db = require('../db')
+  const db = require('./db')
   db.sync()
   .then(() => {
     console.log('db synced')
     app.listen(PORT, () => console.log(`server listening on port ${PORT}`))
   });
 }
+
+
+app.get('/', main);
