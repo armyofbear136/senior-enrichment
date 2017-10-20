@@ -34,7 +34,7 @@ router.post('/', function (req, res, next) {
     .then(function (student) {
       return Student.findOne(
         {
-          where: {id: student.dataValues.id},
+          where: { id: student.dataValues.id },
           include: [{
             model: Campus
           }]
@@ -58,7 +58,16 @@ router.get('/:id', function (req, res, next) {
 router.put('/:id', function (req, res, next) {
   req.requestedStudent.update(req.body)
     .then(function (student) {
-      res.json(student);
+      return Student.findOne(
+        {
+          where: { id: student.dataValues.id },
+          include: [{
+            model: Campus
+          }]
+        })
+    })
+    .then(function (newStudent) {
+      res.json(newStudent);
     })
     .catch(next);
 });
