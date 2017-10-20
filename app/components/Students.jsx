@@ -17,10 +17,19 @@ class Students extends Component {
         return (
             <div className="container">
                 <div>
+                    {this.state.editorActive
+                    ? 
                     <button
-                        onClick={this.toggleEditor}
-                    >Toggle Editor (at bottom)
+                            onClick={this.toggleEditor}
+                        >Editor Mode On
                     </button>
+                    :
+                        <button
+                            onClick={this.toggleEditor}
+                        >Editor Mode Off
+                    </button>
+                }
+
                 </div>
                 <div className="row">
 

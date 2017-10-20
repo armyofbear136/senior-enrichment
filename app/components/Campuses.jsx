@@ -17,15 +17,24 @@ class Campuses extends Component {
             <div className="container">
                 <div className='row'>
                     <div className='col'>
-                        <button
-                            onClick={this.toggleEditor}
-                        >Toggle Editor</button>
+                        {this.state.editorActive
+                            ?
+                            <button
+                                onClick={this.toggleEditor}
+                            >Editor Mode On
+                        </button>
+                            :
+                            <button
+                                onClick={this.toggleEditor}
+                            >Editor Mode Off
+                        </button>
+                        }
                     </div>
                     <div className='col campus-title'>
                         <h1>Campuses</h1>
                     </div>
                     <div className='col'>
-                        <h1/>
+                        <h1 />
                     </div>
                 </div>
                 <div className="row">
