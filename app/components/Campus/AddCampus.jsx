@@ -90,7 +90,8 @@ class AddCampus extends Component {
         event.preventDefault();
         console.log(event.target.name.value);
         const name = event.target.name.value;
-        const imageUrl = event.target.imageUrl.value;
+        let imageUrl = event.target.imageUrl.value;
+        if (imageUrl === '') imageUrl = 'https://vignette2.wikia.nocookie.net/mlp/images/5/54/Ponyville_is_in_chaos_S2E02.png/revision/latest?cb=20120715155845';
         this.props.attemptSignUpCampus(name, imageUrl);
 
     }
@@ -98,7 +99,8 @@ class AddCampus extends Component {
         event.preventDefault();
         const id = event.target.id.value;
         const name = event.target.name.value;
-        const imageUrl = event.target.imageUrl.value;
+        let imageUrl = event.target.imageUrl.value;
+        if (imageUrl === '') imageUrl = 'https://vignette2.wikia.nocookie.net/mlp/images/5/54/Ponyville_is_in_chaos_S2E02.png/revision/latest?cb=20120715155845';
         this.props.attemptEditCampus(id, name, imageUrl);
 
     }

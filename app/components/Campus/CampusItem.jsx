@@ -9,7 +9,6 @@ export default class CampusItem extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log('props are', this.props)
     }
 
     render() {

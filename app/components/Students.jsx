@@ -47,7 +47,6 @@ class Students extends Component {
     }
 
     toggleEditor() {
-        console.log(this.state);
         this.setState({ editorActive: !this.state.editorActive })
     }
 }

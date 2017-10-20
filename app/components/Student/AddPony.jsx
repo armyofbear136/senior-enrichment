@@ -110,7 +110,8 @@ class AddPony extends Component {
         event.preventDefault();
         const name = event.target.name.value;
         const campus_id = event.target.campus_id.value;
-        const imageUrl = event.target.imageUrl.value;
+        let imageUrl = event.target.imageUrl.value;
+        if (imageUrl === '') imageUrl = 'http://vignette2.wikia.nocookie.net/mlp/images/d/d3/FANMADE_Derpy_Hooves_flying_by_sierraex.png/revision/latest?cb=20120608043840';
         this.props.attemptSignUpPony(name, campus_id, imageUrl);
 
     }
@@ -120,7 +121,8 @@ class AddPony extends Component {
         const id = event.target.id.value;
         const name = event.target.name.value;
         const campus_id = event.target.campus_id.value;
-        const imageUrl = event.target.imageUrl.value;
+        let imageUrl = event.target.imageUrl.value;
+        if (imageUrl === '') imageUrl = 'http://vignette2.wikia.nocookie.net/mlp/images/d/d3/FANMADE_Derpy_Hooves_flying_by_sierraex.png/revision/latest?cb=20120608043840';
         this.props.attemptEditPony(id, name, campus_id, imageUrl);
 
     }

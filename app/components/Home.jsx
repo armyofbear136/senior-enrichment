@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import WinterJokes from './WinterJokes';
+
 
 export default class Home extends Component {
     constructor() {
@@ -15,6 +17,7 @@ export default class Home extends Component {
                         <h2>Click to see our campuses and students!</h2>
                     </div>
                 </section>
+            <WinterJokes/>
             </div>
         )
     }

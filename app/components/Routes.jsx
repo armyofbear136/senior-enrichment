@@ -24,7 +24,6 @@ class Routes extends Component {
     }
 
     render() {
-        console.log(history);
         return (
             <Router history={history} >
                 <Root>
