@@ -19,11 +19,11 @@ let newStudents = [
     Student.build({ name: 'Rainbow Dash', campus_id: 2, imageUrl: 'https://mylittlepony.hasbro.com/images/pick_MLP_rainbowdash.png' }),
     Student.build({ name: 'Pinkie Pie', campus_id: 4, imageUrl: 'https://mylittlepony.hasbro.com/images/pick_MLP_pinkiepie.png' }),
     Student.build({ name: 'Rarity', campus_id: 2, imageUrl: 'https://mylittlepony.hasbro.com/images/pick_MLP_rarity.png'}),
-    Student.build({ name: 'Trixie Lulamoon', campus_id: 1 }),
-    Student.build({ name: 'Moondancer', campus_id: 1 }),
-    Student.build({ name: 'Princess Celestia', campus_id: 2 }),
-    Student.build({ name: 'Princess Luna', campus_id: 2 }),
-    Student.build({ name: 'Princess Cadence', campus_id: 1 }),
+    Student.build({ name: 'Trixie Lulamoon', campus_id: 1, imageUrl: 'https://img00.deviantart.net/544c/i/2012/337/4/2/trixie_lulamoon_head_by_racefox-d5my6sq.png'}),
+    Student.build({ name: 'Moondancer', campus_id: 1, imageUrl: 'https://img00.deviantart.net/1637/i/2015/185/8/1/moondancer_vector_by_wingedwolf94-d8zxx5x.png'}),
+    Student.build({ name: 'Princess Celestia', campus_id: 2, imageUrl: 'https://vignette4.wikia.nocookie.net/poohadventures/images/e/eb/Princess_Celestia_as_a_young_filly.png/revision/latest?cb=20131228234738' }),
+    Student.build({ name: 'Princess Luna', campus_id: 2, imageUrl: 'https://vignette2.wikia.nocookie.net/mlpfanart/images/9/97/Luna_Filly_by_MoongazePonies.png/revision/latest?cb=20111008151243' }),
+    Student.build({ name: 'Princess Cadence', campus_id: 1, imageUrl: 'https://mlpforums.com/uploads/monthly_01_2015/post-20300-0-63653100-1422604513.png'}),
 ]
 
 function createCampuses () {

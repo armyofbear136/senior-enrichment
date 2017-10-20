@@ -10,21 +10,20 @@ class Navbar extends Component {
     }
     render() {
         return (
-            // <Router history={history} >
+            <div className="container campus-item">
+                <nav className="navigator row">
+                    <div className="col">
+                        <h2><NavLink to="/"> Home </NavLink></h2>
+                    </div>
+                    <div className="col">
+                        <h2><NavLink to="/campuses"> Campuses </NavLink></h2>
+                    </div>
+                    <div className="col">
+                        <h2><NavLink to="/students"> Students </NavLink></h2>
+                    </div>
 
-            <nav className="navigator">
-                <div className= "home-button">
-                    <NavLink to="/"> Home </NavLink>
-                </div>
-                <div className= "campuses-button">
-                    <NavLink to="/campuses"> Campuses </NavLink>
-                </div>
-                <div className= "students-button">
-                    <NavLink to="/students"> Students </NavLink>
-                </div>
-
-            </nav>
-            // </Router>
+                </nav>
+            </div>
         )
     }
 }

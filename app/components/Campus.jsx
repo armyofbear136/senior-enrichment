@@ -21,15 +21,17 @@ class Campus extends Component {
         if (!this.state.ourCampus) return <div />  // the student id is invalid or data isn't loaded yet
 
         return (
-            <div>
-                <div className="campus-elements">
-                    <h1>{`${this.state.ourCampus.name}`}</h1>
-                    <div className="media-right media-middle">
+            <div className="container">
+                <div className="row">
+                    <div className="col">
                         <button
                             className="btn btn-default"
-                            onClick={this.removeCampusCallback}>
+                            onClick={this.removeCampusCallback}>X
                             <span className="glyphicon glyphicon-remove" />
                         </button>
+                    </div>
+                    <div className='col'>
+                        <h1 className='campus-title'>{`${this.state.ourCampus.name}`}</h1>
                     </div>
                 </div>
                 <div className="student-elements">

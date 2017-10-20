@@ -32,7 +32,6 @@ router.get('/', function (req, res, next) {
 router.post('/', function (req, res, next) {
   Student.create(req.body)
     .then(function (student) {
-      console.log("finding one student", student.dataValues.id);
       return Student.findOne(
         {
           where: {id: student.dataValues.id},

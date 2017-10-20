@@ -18,7 +18,7 @@ class StudentDetail extends React.Component {
         const ourStudent = this.props.students.filter(this.filterOneStudent)[0];
         if (!ourStudent) return <div />  // the student id is invalid or data isn't loaded yet
         return (
-            <div className="container">
+            <div className="container student-item">
                 <StudentItem student={ourStudent} />
                 <div className="panel panel-warning">
                     <div className="panel-heading">

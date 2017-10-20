@@ -15,30 +15,40 @@ class Students extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="container">
                 <div>
                     <button
-                    onClick={this.toggleEditor}
-                    >Toggle Editor</button>
+                        onClick={this.toggleEditor}
+                    >Toggle Editor (at bottom)
+                    </button>
                 </div>
-                <div>
-                    <h1># Name Campus</h1>
+                <div className="row">
+
+                    <div className="col">
+                        <h1 className='campus-title'>#</h1>
+                    </div>
+                    <div className="col">
+                        <h1 className='campus-title'>Name</h1>
+                    </div>
+                    <div className="col">
+                        <h1 className='campus-title'>Campus</h1>
+                    </div>
+                    <div className="col">
+                        {
+                            this.props.students
+                                //.filter(this.filterUser)
+                                .map(student => <StudentItem student={student} key={student.id} />)
+                        }
+                    </div>
+                    {this.state.editorActive ? <AddPony /> : null}
                 </div>
-                <div className="student-elements">
-                    {
-                        this.props.students
-                            //.filter(this.filterUser)
-                            .map(student => <StudentItem student={student} key={student.id} />)
-                    }
-                </div>
-                {this.state.editorActive ? <AddPony/> : null}
             </div>
         )
     }
 
     toggleEditor() {
         console.log(this.state);
-        this.setState({editorActive: !this.state.editorActive})
+        this.setState({ editorActive: !this.state.editorActive })
     }
 }
 

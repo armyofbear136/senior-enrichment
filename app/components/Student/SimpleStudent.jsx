@@ -18,25 +18,28 @@ class SimpleStudent extends React.Component {
         const { student } = this.props;
         return (
             <div className="list-group-item min-content student-item">
-                <div className="media">
-                    {/* <div className="media-left media-middle icon-container">
-                        <img className="media-object img-circle" src={student.photo} />
-                    </div> */}
-                    <NavLink
-                        className="media-body"
-                        activeClassName="active"
-                        to={`/student/${student.id}`}>
-                        <h4 className="media-heading tucked">
-                            <span placeholder="Jean Doe">{student.name}</span>
-                        </h4>
-
-                    </NavLink>
-                    <div className="media-right media-middle">
+                <div className="row">
+                    <div className="col">
                         <button
                             className="btn btn-default"
-                            onClick={this.removeStudentCallback}>
+                            onClick={this.removeStudentCallback}>X
                             <span className="glyphicon glyphicon-remove" />
                         </button>
+                    </div>
+                    <div className='col'>
+                        <NavLink
+                            className="media-body"
+                            activeClassName="active"
+                            to={`/student/${student.id}`}>
+
+                            <h4 className="media-heading tucked col">
+                                <span placeholder="Jean Doe">{student.name}</span>
+                            </h4>
+
+                        </NavLink>
+                    </div>
+                    <div className='col'>
+                        <img className="img-rounded" height="50" src={student.imageUrl} />
                     </div>
                 </div>
             </div>

@@ -12,35 +12,44 @@ class AddCampus extends Component {
     }
     render() {
         return (
-            <div className='student-elements'>
-                <div>
-                    <h1>Add Campus</h1>
+            <div className='col student-item'>
+                <div className='col'>
+                    <h1 className='campus-title'>Add Campus</h1>
+                    <label className='col'> </label>
                     <form onSubmit={this.onCampusSubmit}>
                         <div>
-                            <label>Name</label>
+                            <label className='col campus-title'>Name:</label>
                             <input
+                                className='col'
                                 name="name"
                                 type="name"
                                 placeholder="Yakyakistan Asylum"
                                 required
                             />
                         </div>
+                        <label className='col'> </label>
                         <div>
-                            <label>Image Url</label>
+                            <label className='col campus-title'>Image Url</label>
                             <input
+                                className='col'
                                 name="imageUrl"
                                 placeholder="http://www.ponytown.com/default.png"
                             />
                         </div>
+                        <label className='col'> </label>
                         <button type="submit">Confirm</button>
                     </form>
                 </div>
-                <div>
-                    <h1>Edit Campus</h1>
+                <label className='col'> </label>
+                <label className='col'> </label>
+                <div className='col'>
+                    <h1 className='campus-title'>Edit Campus</h1>
+                    <label className='col'> </label>
                     <form onSubmit={this.onCampusEditSubmit}>
                         <div>
-                            <label>Campus to modify: </label>
+                            <label className='col campus-title'>Campus to modify: </label>
                             <select
+                                className='col'
                                 name='id'>
                                 {
                                     this.props.campuses
@@ -48,21 +57,26 @@ class AddCampus extends Component {
                                 }
                             </select>
                         </div>
+                        <label className='col'> </label>
                         <div>
-                            <label>New Name</label>
+                            <label className='col campus-title'>New Name</label>
                             <input
+                                className='col'
                                 name="name"
                                 type="name"
                                 placeholder="Yakyakistan Asylum"
                             />
                         </div>
+                        <label className='col'> </label>
                         <div>
-                            <label>Image Url</label>
+                            <label className='col campus-title'>Image Url</label>
                             <input
+                                className='col'
                                 name="imageUrl"
                                 placeholder="http://www.ponytown.com/default.png"
                             />
                         </div>
+                        <label className='col'> </label>
                         <button type="submit">Confirm</button>
                     </form>
                 </div>

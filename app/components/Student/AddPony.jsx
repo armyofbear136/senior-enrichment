@@ -11,22 +11,26 @@ class AddPony extends Component {
     }
     render() {
         return (
-            <div>
-                <div className="student-elements">
-                    <h1>Add Pony</h1>
+            <div className='col student-item'>
+                <div className='col'>
+                    <h1 className='campus-title'>Add Pony</h1>
+                    <label className='col'> </label>
                     <form onSubmit={this.onPonySubmit}>
                         <div>
-                            <label>Name</label>
+                            <label className='col campus-title'>Name</label>
                             <input
+                                className='col'
                                 name="name"
                                 type="name"
                                 placeholder="Fizzlepop Berrytwist"
                                 required
                             />
                         </div>
+                        <label className='col'> </label>
                         <div>
-                            <label>Campus</label>
+                            <label className='col campus-title'>Campus</label>
                             <select
+                                className='col'
                                 name='campus_id'>
                                 {
                                     this.props.campuses
@@ -34,20 +38,28 @@ class AddPony extends Component {
                                 }
                             </select>
                         </div>
+                        <label className='col'> </label>
                         <div>
-                            <label>Image Url</label>
+                            <label className='col campus-title'>Image Url</label>
                             <input
+                                className='col'
                                 name="imageUrl"
                                 placeholder="http://www.ponytown.com/default.png"
                             />
                         </div>
                         <button type="submit">Confirm</button>
                     </form>
-                    <h1>Edit Pony</h1>
+                </div>
+                <label className='col'> </label>
+                <label className='col'> </label>
+                <div className='col'>
+                    <h1 className='campus-title'>Edit Pony</h1>
+                    <label className='col'> </label>
                     <form onSubmit={this.onPonyEditSubmit}>
                         <div>
-                            <label>Pony to modify: </label>
+                            <label className='col campus-title'>Pony to modify: </label>
                             <select
+                                className='col'
                                 name='id'>
                                 {
                                     this.props.students
@@ -55,19 +67,22 @@ class AddPony extends Component {
                                 }
                             </select>
                         </div>
-                        <div>---------------------------------</div>
+                        <label className='col'> </label>
                         <div>
-                            <label>Name</label>
+                            <label className='campus-title'>Name</label>
                             <input
+                                className='col'
                                 name="name"
                                 type="name"
                                 placeholder="Fizzlepop Berrytwist"
                                 required
                             />
                         </div>
+                        <label className='col'> </label>
                         <div>
-                            <label>Campus</label>
+                            <label className='col campus-title'>Campus</label>
                             <select
+                                className='col'
                                 name='campus_id'>
                                 {
                                     this.props.campuses
@@ -75,9 +90,11 @@ class AddPony extends Component {
                                 }
                             </select>
                         </div>
+                        <label className='col'> </label>
                         <div>
-                            <label>Image Url</label>
+                            <label className='col campus-title'>Image Url</label>
                             <input
+                                className='col'
                                 name="imageUrl"
                                 placeholder="http://www.ponytown.com/default.png"
                             />
@@ -91,7 +108,6 @@ class AddPony extends Component {
 
     onPonySubmit(event) {
         event.preventDefault();
-        console.log("creating pony");
         const name = event.target.name.value;
         const campus_id = event.target.campus_id.value;
         const imageUrl = event.target.imageUrl.value;
@@ -118,8 +134,8 @@ const mapDispatch = (dispatch, ownProps) => {
     return {
         attemptSignUpPony: (name, campus_id, imageUrl) =>
             dispatch((addStudent)({ name, campus_id, imageUrl })),
-        attemptEditPony: (id, name, campus_id) =>
-            dispatch((updateStudent)(id, { name, campus_id, imageUrl}))
+        attemptEditPony: (id, name, campus_id, imageUrl) =>
+            dispatch((updateStudent)(id, { name, campus_id, imageUrl }))
     }
 };
 

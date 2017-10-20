@@ -15,7 +15,7 @@ export default class CampusItem extends React.Component {
     render() {
         const { campus } = this.props;
         return (
-            <div className="list-group-item min-content campus-item">
+            <div className="col justify-content-md-center list-group-item min-content campus-item">
                 <div className="media">
                     {/* <div className="media-left media-middle icon-container">
                         <img className="media-object img-circle" src={campus.photo} />
@@ -27,7 +27,7 @@ export default class CampusItem extends React.Component {
                         <h4 className="media-heading tucked">
                             <span placeholder="Pony School">{campus.name}</span>
                         </h4>
-                        <img className='campus-img' src={campus.imageUrl}/>
+                        <img className="img-rounded" width="200" src={campus.imageUrl} />
                     </NavLink>
                     {/* <div className="media-right media-middle">
                         {this.props.onecampus.isAdmin ?

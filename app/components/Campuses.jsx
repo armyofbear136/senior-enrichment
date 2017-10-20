@@ -14,28 +14,37 @@ class Campuses extends Component {
     }
     render() {
         return (
-            <div>
-                <div>
-                    <button
-                    onClick={this.toggleEditor}
-                    >Toggle Editor</button>
+            <div className="container">
+                <div className='row'>
+                    <div className='col'>
+                        <button
+                            onClick={this.toggleEditor}
+                        >Toggle Editor</button>
+                    </div>
+                    <div className='col campus-title'>
+                        <h1>Campuses</h1>
+                    </div>
+                    <div className='col'>
+                        <h1/>
+                    </div>
                 </div>
-                <h1 className='campus'>Campuses</h1>
-                <div>
-                    {
-                        this.props.campuses
-                            //.filter(this.filterUser)
-                            .map(campus => <CampusItem campus={campus} key={campus.id} />)
-                    }
+                <div className="row">
+                    <div className="col">
+                        {
+                            this.props.campuses
+                                //.filter(this.filterUser)
+                                .map(campus => <CampusItem campus={campus} key={campus.id} />)
+                        }
+                    </div>
+                    {this.state.editorActive ? <AddCampus /> : null}
                 </div>
-                {this.state.editorActive ? <AddCampus/> : null}
             </div>
         )
     }
 
     toggleEditor() {
         console.log(this.state);
-        this.setState({editorActive: !this.state.editorActive})
+        this.setState({ editorActive: !this.state.editorActive })
     }
 
 }
