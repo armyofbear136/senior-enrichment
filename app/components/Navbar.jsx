@@ -22,6 +22,10 @@ class Navbar extends Component {
                         <h2><NavLink to="/students"> Students </NavLink></h2>
                     </div>
 
+                    <div className="col">
+                        <h2><NavLink to="/channels"> Chat </NavLink></h2>
+                    </div>
+
                 </nav>
             </div>
         )

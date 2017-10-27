@@ -3,6 +3,8 @@ const api = require('express').Router()
 const db = require('../db')
 const studentRouter = require('../api/student.router');
 const campusRouter = require('../api/campus.router');
+const channelRouter = require('../api/channels');
+const messageRouter = require('../api/messages');
 
 // If you aren't getting to this object, but rather the index.html (something with a joke) your path is wrong.
 	// I know this because we automatically send index.html for all requests that don't make sense in our backend.
@@ -11,5 +13,7 @@ api.get('/hello', (req, res) => res.send({hello: 'world'}))
 
 api.use('/students', studentRouter);
 api.use('/campuses', campusRouter);
+api.use('/channels', channelRouter);
+api.use('/messages', messageRouter);
 
 module.exports = api

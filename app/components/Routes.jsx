@@ -13,6 +13,7 @@ import Students from './Students';
 import Campus from './Campus';
 import Campuses from './Campuses';
 import StudentDetail from './Student/StudentDetail';
+import Stackchat from './Stackchat/Main';
 
 import { fetchStudents } from '../reducers/students';
 import { fetchCampuses } from '../reducers/campuses';
@@ -33,6 +34,7 @@ class Routes extends Component {
                         <Route path="/student/:id" component={StudentDetail} />
                         <Route path="/campuses" component={Campuses} />
                         <Route path="/campus/:id" component={Campus} />
+                        <Route path="/channels" component={Stackchat} />
                         <Redirect to="/" />
                     </Switch>
                 </Root>
